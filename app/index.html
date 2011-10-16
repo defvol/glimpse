@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+<!-- META -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" id="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no" />
+
+<!-- TITLE -->
+<title>glimpse</title>
+
+<!-- CSS -->
+<link href="css/reset.css" type="text/css" rel="stylesheet" media="screen" />
+<link href="css/screen.css" type="text/css" rel="stylesheet" media="screen" />
+
+<!-- JS Libraries -->
+<script type="text/javascript" src="js/jquery-1.5.min.js"></script>
+<script type="text/javascript" src="js/bestImage.js"></script>
+<script type="text/javascript" src="js/feeds.js"></script>
+<script type="text/javascript" src="js/greader.js"></script>
+
+<!-- JS Controller -->
+<script type="text/javascript" src="js/results.js"></script>
+
+</head>
+
+<body>
+	<div id="menuBar">
+		<span id="menuHeader">glimpse</span>
+		<img src="images/swipeDownLabel.png" id="closeMenuHelper" />
+		<div id="loginFormContainer">
+			<span id="loginFormTitle">Google Reader™ feed reader Mode</span>
+			<div class="textBar">
+				<input type="text" id="usernameField" class="textBox" placeholder="username" value="" />
+			</div>
+			<div class="textBar">
+				<input type="password" id="passwordField" class="textBox" placeholder="password" value="" />
+			</div>
+			<div id="loginFormFooterLeft">
+				<span></span>
+			</div>
+			<div id="loginFormFooterRight">
+				<span class="button" id="googleFormSubmit"> login </span>
+			</div>
+			<img src="images/syncSpinner.gif" id="googleLoading" />
+		</div>
+		<div id="social_nav_horizontal">
+			<ul>
+				<li class='fontSize'>Font Size</li>
+				<li class='readMore'>Read More</li>
+				<li class='browser'>Browser</li>
+				<li class='facebook'>Facebook</li>
+				<li class='twitter'>Twitter</li>
+			</ul>
+			<ul id="googleReaderExtras">
+				<li class='unread'>Unread</li>
+				<li class='star'>Star</li>
+			</ul>
+		</div>
+	</div>
+	<div id="contentOverlay">
+		<div id="navigationBar">
+			<ul>
+				<li class='previousArticle'></li>
+				<li class='nextArticle'></li>
+			</ul>
+			<span class="button" id="closeContentArea"> close </span>
+			<span id="articleCount"></span>
+		</div>
+		<div id="contentArea"></div>
+	</div>
+	
+	<div id="readMoreSection">
+    	<div id="readMoreBar">
+    		<span id="appName">glimpse</span>
+    		<span class="button" id="closeReadMore"> close </span>
+    		<span class="button" id="invokeBrowserButton"> send to browser </span>
+    	</div>
+    </div>
+
+    <div id="editBar">
+    	<span class="button" id="doneButton"> done </span>
+    	<span class="button" id="cancelButton"> cancel </span>
+    </div>
+    
+	<div id="page">
+		
+		<!-- HEADER area of the page -->
+		<div id="header">
+			
+			<img src="images/updateContentLabel.png" id="updateHelper" />
+			<img src="images/addSourcesLabel.png" id="sourcesHelper" />
+			
+			<span class="title">glimpse</span>
+			
+			<div id="headerTools">
+				<img src="images/refresh.png" id="reloadButton" />
+				<img src="images/loadingSpinner.gif" id="feedsLoading" />
+				<span id="starFilter"></span>
+				<img src="images/rss.png" id="feedsButton" />
+				<img src="images/manualAdd.png" id="newFeedButton" />
+			</div>
+			
+			<div id="searchBar">
+				<input type="text" id="searchBox" name="s" placeholder="Enter text to filter your news..." value="" />
+			</div>
+			
+		</div>
+		
+		<ul id="feedList"></ul> 
+		
+		<!-- Loading Placeholder -->
+		<div id="loadingPlaceholder">
+			<img id="loadingBackground" src="images/loadingPlaceholder.png" />
+			<div id="loadingContainer">
+				<img src="images/loadingSpinner.gif" id="loadingSpinner" />
+				<span id="loadingText">Obtaining feed sources...</span>
+			</div>
+		</div>
+		
+		<!-- Popup for adding feeds -->
+
+		<div id="mFeedPlaceholder">
+			<div id="mFeedContainer">
+				<h3>Add a new source</h3>
+				<span id="error">Sorry, there was a problem with the url entered.</span>
+				<div id="txtFields">
+					<div id="url">
+						<label for="txtUrl">url</label>
+						<input type="text" id="txtUrl" placeholder="http://www.fastcompany.com/rss.xml" value="" />
+					</div>
+					<div id="name">
+						<label for="txtName">name</label>
+						<input type="text" id="txtName" placeholder="FastCompany.com" value="" />				
+					</div>
+				</div>
+				<div id="buttons">
+					<span class="button" id="save"> save </span>
+    				<span class="button" id="cancel"> cancel </span>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Area containing content cells -->
+		<ul id="cellArea">
+			
+		</ul>
+	
+		<div id="clear"></div>
+		
+		<div id="footer">
+			<span>Another app by </span>
+			<img id="teigaLogo" src="images/teigaLogo.png" />
+		</div>
+	</div>
+	
+	<!-- Paparazzi hidden DIV -->
+	<div id="hiddenImages"></div>
+
+	<!-- Place to hold templates to be clones -->
+	<div id="templates">
+		<iframe sandbox id="readMoreFrame" frameborder="0" src="" seamless="seamless"></iframe>
+	</div>
+	
+</body>
+
+</html>

@@ -1,0 +1,992 @@
+body {
+	font-family: 'ColaborateRegular', Arial, sans-serif;
+	font-size: 1em;
+	background: #222222;
+	color: #555451;
+	min-width: 502px;
+}
+
+div#page {
+}
+
+
+/* ---- Menu Bar ---- */
+
+#menuBar {
+	position: fixed; 
+	left:0px; 
+	top:-250px;
+	z-index:1000; 
+	width:100%;
+	height: 245px;
+	clear: both;
+	border-bottom: solid 1px #000000;
+	/*background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0.31, rgb(122,121,121)), color-stop(0.66, rgb(79,77,77)), color-stop(0.83, rgb(56,54,56)) );*/
+	background-color: #323232;
+	box-shadow: 3px 3px 4px #000;
+	/* ---- Until CSS3 is standardized ----- */
+	-webkit-box-shadow: 3px 3px 4px #000; 
+	-webkit-transition: all 0.5s ease-in-out;
+}
+
+#menuBar span#menuHeader {
+	font-size: 1.2em;
+	text-align: center;
+	width: 100%;
+	background-color: #000000;
+	display: block;
+	height: 1em;
+	color: #f0f0f0;
+	padding: 5px;
+	border-bottom: #444444 solid 1px;
+}
+
+#menuBar #closeMenuHelper {
+	float: right;
+	margin: 10px;
+	width: 180px;
+}
+
+/* ---- Login Form Container --- */
+
+#loginFormContainer {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+}
+
+#loginFormContainer #loginFormTitle {
+	font-size: 1.2em;
+	color: #FFFFFF;
+	padding: 5px;
+}
+
+#loginFormContainer #loginFormFooterLeft {
+	display: inline;
+}
+
+#loginFormContainer #googleLoading {
+	position: relative;
+	top: 10px;
+	z-index: 100;
+	display: none;
+}
+
+#loginFormContainer #loginFormFooterLeft span {
+	color: #5A9DA6;
+	float: left;
+	padding: 10px 5px 10px 0;
+}
+
+#loginFormContainer #loginFormFooterRight {
+	display: inline;
+}
+
+#loginFormContainer #loginFormFooterRight #googleFormSubmit {
+	color: #fff;
+	font-size: 1em;
+	float: right;
+	padding: 10px 10px;
+	border-radius: 2px;
+	background-color: #444444;
+	width: 100px;
+	cursor: pointer;
+	text-align: center;
+}
+
+#loginFormContainer #loginFormFooterRight #googleFormSubmit:hover {}
+#loginFormContainer #loginFormFooterRight #googleFormSubmit:active {
+	position: relative;
+	left: 2px;
+	top: 2px;
+}
+
+#loginFormContainer .textBar {
+	background-color: #F0F0F0;
+	margin: 10px 0;
+	height: 30px;
+	border: 2px solid white;
+	border-radius: 5px;
+}
+
+#loginFormContainer .textBar.focused {
+	border: 2px solid #5A9DA6;
+	background-color: #FFFFFF;
+}
+
+#loginFormContainer .textBox {
+	background-color: transparent;
+	color: #323232;
+	height: inherit;
+	width: 376px;
+	font-size: 1.0em;
+	padding: 0 10px 0 10px;
+	border: none;
+	outline: none;
+	position: relative;
+}
+
+/* ---- social nav options --- */
+
+#social_nav_horizontal {
+	display: none;
+	width: 100%;
+}
+
+#social_nav_horizontal ul {
+	list-style-type: none;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+}
+
+#social_nav_horizontal ul#googleReaderExtras {
+	width: 200px;
+	display: none;
+}
+
+#social_nav_horizontal ul li {
+	text-align: center;
+	float: left;
+	margin: 10px 10px 0 10px;
+	width: 80px;
+	color: #F0F0F0;
+	padding-top: 50px;
+}
+
+#social_nav_horizontal ul li:hover {}
+#social_nav_horizontal ul li:active {
+	position: relative;
+	left: 2px;
+	top: 2px;
+}
+
+#social_nav_horizontal  ul li.fontSize {
+	background:url(../images/fontSize.png) no-repeat;
+	background-position: 20px 0;
+}
+
+#social_nav_horizontal  ul li.readMore {
+	background:url(../images/readMore.png) no-repeat;
+	background-position: 20px 0;
+}
+
+#social_nav_horizontal  ul li.browser {
+	background:url(../images/browser.png) no-repeat;
+	background-position: 20px 0;
+}
+
+#social_nav_horizontal ul li.facebook {
+	background:url(../images/facebook.png) no-repeat;
+	background-position: 20px 0;
+}
+
+#social_nav_horizontal ul li.twitter {
+	background:url(../images/twitter.png) no-repeat;
+	background-position: 20px 0;
+}
+
+#social_nav_horizontal ul li.unread {
+	background:url(../images/unread.png) no-repeat;
+	background-position: 20px 5px;
+}
+
+#social_nav_horizontal ul li.unreadMarked {
+	background:url(../images/unreadMarked.png) no-repeat;
+	background-position: 20px 5px;
+}
+
+#social_nav_horizontal ul li.star {
+	background:url(../images/star.png) no-repeat;
+	background-position: 20px 5px;
+}
+
+#social_nav_horizontal ul li.starMarked {
+	background:url(../images/starMarked.png) no-repeat;
+	background-position: 20px 5px;
+}
+
+
+
+/* ---- Edit Bar --- */
+
+
+div#editBar {
+	background: url("../images/editBarBackground.png");
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	height: 50px;
+	display: none;
+}
+
+div#editBar span, div#readMoreBar #closeReadMore, div#readMoreBar #invokeBrowserButton, #mFeedPlaceholder #mFeedContainer #buttons #save, #mFeedPlaceholder #mFeedContainer #buttons #cancel {
+	color: #fff;
+	font-size: 1em;
+	float: right;
+	margin: 5px 16px 5px 0;
+	padding: 10px 10px;
+	border-radius: 2px;
+	background-color: #444444;
+	width: 100px;
+	cursor: pointer;
+	text-align: center;
+}
+
+div#readMoreBar #invokeBrowserButton {
+	color: #5A9DA6;
+	width: 140px;
+}
+
+div#editBar span:hover {}
+div#editBar span:active {
+	position: relative;
+	left: 2px;
+	top: 2px;
+}
+
+div#readMoreBar #closeReadMore:hover {}
+div#readMoreBar #closeReadMore:active {
+	position: relative;
+	left: 2px;
+	top: 2px;
+}
+
+div#readMoreBar #invokeBrowserButton:hover {}
+div#readMoreBar #invokeBrowserButton:active {
+	position: relative;
+	left: 2px;
+	top: 2px;
+}
+
+/* ---- readMore Section --- */
+
+div#readMoreSection {
+	display: none;
+}
+
+div#readMoreBar {
+	background: url("../images/editBarBackground.png");
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	height: 50px;
+}
+
+div#readMoreBar span#appName {
+	font-size: 1.5em;
+	padding-left: 16px;
+	color: #f0f0f0;
+	position: relative;
+	top: 25%;
+}
+
+div#readMoreSection iframe {
+	background: none repeat scroll 0% 0%; 
+	width: 100%; 
+	height: 546px;
+}
+
+
+
+ 
+/* --- contentArea Elements --- */
+
+#contentArea {
+	clear: both;
+	width: 944px;
+	height: 460px;
+	padding: 10px;
+	margin: 20px;
+	background: #fff;
+	z-index: 150;
+	overflow: auto;
+	border: solid 10px;
+}
+
+#contentArea h2 {
+	font-size: 1.5em;
+	color: #222222;
+}
+
+#contentArea h3 {
+	font-size: 1.2em;
+	color: #5A9DA6;
+	margin-bottom: 16px;
+}
+
+#contentArea span.source {
+	font-size: 1.3em;
+	color: #555451;
+	font-variant: small-caps;
+}
+
+#contentArea p {
+	line-height: 150%;
+	margin-bottom: 1em;
+}
+
+#contentArea a {
+	color: inherit;
+	text-decoration: none;
+}
+
+#contentArea img {
+	margin-top: 0.4em; 
+	margin-bottom: 0.4em;
+	max-width: 100%;
+}
+
+
+
+/* --- navigationBar Elements --- */
+
+#contentOverlay {
+	width: 1024px; /* Change for portrait orientation */
+	height: 600px; /* Change for portrait orientation */
+	position: fixed;
+	left: 1024px;
+	background-color: black;
+	z-index: 140;
+}
+
+.showContentOverlay {
+	-webkit-transition: all 0.5s ease-in-out;
+	-webkit-transform: translate(-1024px, 0);		
+}
+
+.hideContentOverlay {
+	-webkit-transition: all 0.5s ease-in-out;
+	-webkit-transform: translate(1024px, 0);
+}
+
+#navigationBar {
+	
+	background: url("../images/editBarBackground.png");
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	height: 50px;
+	
+}
+
+#navigationBar ul {
+	list-style-type: none;
+}
+
+#navigationBar ul li {
+	height: 50px;
+	float: left;
+	margin: 5px 17px 5px 17px;
+	width: 40px;
+}
+
+#navigationBar ul li:hover {}
+#navigationBar ul li:active {
+	position: relative;
+	left: 2px;
+	top: 2px;
+}
+
+#navigationBar  ul li.previousArticle {
+	background:url(../images/back.png) no-repeat;
+}
+
+#navigationBar  ul li.nextArticle {
+	background:url(../images/forward.png) no-repeat;
+}
+
+#navigationBar #closeContentArea {
+	color: #fff;
+	font-size: 1em;
+	float: right;
+	margin: 5px 19px 5px 0;
+	padding: 10px 10px;
+	border-radius: 2px;
+	background-color: #444444;
+	width: 100px;
+	cursor: pointer;
+	text-align: center;
+}
+
+#navigationBar #closeContentArea:hover {}
+#navigationBar #closeContentArea:active {
+	position: relative;
+	left: 2px;
+	top: 2px;
+}
+
+#navigationBar #articleCount {
+	color: #5A9DA6;
+	font-size: 1.5em;
+	display: block;
+	padding: 10px;
+	text-align: center;
+}
+
+
+/* --- HEADER Elements---*/
+
+div#header {
+	margin: 0 0 35px 0;
+}
+
+#header #updateHelper {
+	position: absolute;
+	top: 22px;
+	left: 80px;
+	visibility: hidden;
+	z-index: 100;
+}
+
+#header #sourcesHelper {
+	position: absolute;
+	top: 22px;
+	right: 80px;
+	visibility: hidden;
+	z-index: 100;
+}
+
+#header .title {
+	font-size: 4em;
+	text-align: center;
+	display: block;
+	padding: 10px 0 10px 0;
+	color: #f0f0f0;
+}
+
+#header .title input {
+	background-color: transparent;
+	font-size: inherit;
+	text-align: center;
+	font-family: inherit;
+	color: inherit;
+}
+
+#headerTools {
+	width: inherit;
+	position: relative;
+	top: -60px;
+}
+
+#headerTools #newFeedButton {
+	display: none;
+	position: relative;
+	right: 40px;
+	float: right;
+	z-index: 100;
+}
+
+#headerTools #newFeedButton:hover {}
+#headerTools #newFeedButton:active {
+	right: 38px;
+	top: 2px;
+}
+
+#headerTools #reloadButton {
+	position: relative;
+	left: 20px;
+	float: left;
+	z-index: 100;
+	-webkit-transition: all 1s ease-out;
+}
+
+#headerTools #reloadButton:hover {}
+#headerTools #reloadButton:active {
+	-webkit-transform: rotate(360deg);
+}
+
+#headerTools #feedsLoading {
+	position: relative;
+	left: 40px;
+	float: left;
+	z-index: 101;
+	width: 40px;
+	height: 40px;
+	display: none;
+}
+
+#headerTools #starFilter {
+	background:url(../images/star.png) no-repeat;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	right: 80px;
+	float: right;
+	z-index: 100;
+	display: none;
+}
+
+#headerTools #starFilter.filtering {
+	background:url(../images/starMarked.png) no-repeat;
+}
+
+#headerTools #starFilter:hover {}
+#headerTools #starFilter:active {
+	right: 78px;
+	top: 2px;
+}
+
+#headerTools #feedsButton {
+	position: relative;
+	right: 20px;
+	float: right;
+	z-index: 100;
+}
+
+#headerTools #feedsButton:hover {}
+#headerTools #feedsButton:active {
+	right: 18px;
+	top: 2px;
+}
+
+div#searchBar {
+	margin: 0 10px 0 10px;
+	height: 35px;
+	background: #f0f0f0 url("../images/loupe.png") no-repeat;
+	background-position: 5px 0;
+	border: 2px solid white;
+	border-radius: 5px;
+}
+
+div#searchBar.focused {
+	border: 2px solid #5A9DA6;
+	background-color: #FFFFFF;
+}
+
+
+#searchBox {
+	background-color: transparent;
+	height: inherit;
+	font-size: 1.2em;
+	padding: 0 10px 0 40px;
+	border: none;
+	outline: none;
+	position: relative;
+	top: -2em;
+}
+
+
+/* --- Search results box --- */
+
+
+ul#feedList {
+	margin: 0 15px 15px 15px;  /* ---- Change for other orientation ----- */
+	padding: 0px;
+	overflow: hidden;
+	background: #f0f0f0;
+	border: 1px solid;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px; 
+	height: auto;
+	display: none;
+	list-style-type: none;
+}
+
+ul#feedList li {
+	border-top: 1px solid #D1CAC2;
+	padding: 10px;
+	width: inherit;
+}
+
+ul#feedList li.invalidFeed {
+	background-color: rgba(255,20,0,0.7);
+	opacity: 0.5;
+}
+
+ul#feedList li .checkBox, ul#feedList li .deleteBox, ul#feedList li .disabledBox {
+	width: 2em;
+	height: 2em;
+	float: left;
+	z-index: 100;
+}
+
+ul#feedList li .checkBox {
+	border: 2px dashed;
+}
+
+
+ul#feedList li .deleteBox {
+	border: 2px none;
+	background: url("../images/remove.png") no-repeat;
+	background-position: 50%;
+}
+
+ul#feedList li.markedForDeletion {
+	text-decoration: line-through;
+}
+
+ul#feedList li.markedForAddition .checkBox {
+	background: url("../images/check.png") no-repeat;
+	background-position: 50%;
+}
+
+ul#feedList li .feedInfo { 
+	margin-left: 4em;
+}
+
+ul#feedList h2 { 
+	font-size: 1.8em;
+	background-color: #434B4E;
+	color: white;
+	padding: 10px;
+	text-align: center;
+}
+
+ul#feedList > h3 { 
+	font-size: 1.5em;
+	padding: 10px;
+}
+
+ul#feedList li h3 { 
+	display:block;
+	font-size: 1.5em;
+}
+
+ul#feedList li.invalidFeed h3 {
+	color: #000000;
+}
+
+ul#feedList li h3 input {
+	background-color: transparent;
+	font-size: inherit;
+	font-family: inherit;
+	color: inherit;
+}
+
+ul#feedList li h3 b { 
+	font-weight: bold;
+}
+
+ul#feedList li em {
+	font-style: italic;
+	display: block;
+	color: #5A9DA6;
+}
+
+ul#feedList li.invalidFeed em {
+	color: #000000;
+}
+
+ul#feedList li em input {
+	background-color: transparent;
+	font-size: inherit;
+	font-family: inherit;
+	color: inherit;
+	width: 50em;
+}
+
+
+
+
+
+/* --- Cell Area Elements --- */
+
+ul#cellArea { 
+	list-style-type:none;
+}
+
+ul#cellArea > li {
+    background: url("../images/teigaPlaceholder.png") repeat scroll 0 0 transparent;
+    position: relative;
+    float: left;
+    line-height: 18px;
+    margin: 0 0 16px 16px; /* ---- Change for other orientation ----- */
+    width: 234px;
+    height: 171px;
+    border: 1px solid black;
+    overflow: hidden;
+	box-shadow: 3px 3px 4px #000;
+	/* ---- Until CSS3 is standardized ----- */
+	-webkit-box-shadow: 3px 3px 4px #000; 
+}
+
+ul#cellArea > li.selectedCell {
+	border: 4px solid #FFFFFF;
+	margin: -3px -3px 13px 13px;    /* ---- Change for other orientation ----- */
+}
+
+ul#cellArea > li.textOnlyCell span.title{
+    font-size: 1.8em;
+    line-height: 1em;
+    top: 0;
+}
+
+ul#cellArea > li.textOnlyCell span.title i {
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	font-size: .5em;
+	text-align: right;
+	padding-right: 10px;
+	position: absolute;
+	display: block;
+	background-color:rgba(0,0,0,0.9);
+}
+
+ul#cellArea > li span.title {
+	background-color:rgba(0,0,0,0.8);
+	color: white;
+	position: absolute;
+	padding: 10px;
+	bottom: 0;
+	left: 0;
+	width: 216px;
+	height: auto;
+}
+
+ul#cellArea > li span.title i {
+	font-style: italic;
+	font-size: .8em;
+	color: #5A9DA6;
+}
+
+
+
+
+/* --- Loading Placeholder --- */
+
+#loadingPlaceholder {
+	display: none;
+}
+
+#loadingPlaceholder #loadingBackground {
+	width: 100%;
+	height: auto;
+	z-index: 100;
+}
+
+#loadingPlaceholder #loadingContainer {
+	background-color: #222222;
+	width: 350px;
+	height: 200px;
+	float: left;
+	position: fixed;
+	top: 225px;
+	left: 337px;
+	border: 5px solid #000000;
+	z-index: 105;
+}
+
+#loadingPlaceholder #loadingContainer #loadingSpinner {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+#loadingPlaceholder #loadingContainer #loadingText {
+	font-size: 1.5em;
+	text-align: center;
+	padding: 1em;
+	color: #555451;
+	display: block;
+}
+
+
+
+
+/* Pop-up for adding feeds */
+
+#mFeedPlaceholder {
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.8);
+	position: fixed;
+	top: 0;
+	z-index: 200;
+}
+
+#mFeedContainer {
+	font-size: 1.5em;
+	background-color: white;
+	width: 600px; /* Change for portrait orientation */
+	height: 200px;
+	float: left;
+	position: fixed;
+	top: 100px;
+	left: 212px; /* Change for portrait orientation */
+	border: 5px solid #444444;
+	z-index: 300;	
+}
+		
+#mFeedContainer h3 {
+	font-size: 1.2em;
+	padding-top: 10px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#mFeedContainer #error {
+	font-size: 0.8em;
+	padding-left: 10px;
+	display: none;
+	float: left;
+	text-align: center;
+	color: red;
+}
+		
+#mFeedContainer #txtFields {
+	padding-top: 30px;
+	margin: 0 10px 10px 10px;
+}
+
+#mFeedContainer #txtFields label {
+	width: 3em;
+	float: left;
+	text-align: right;
+	margin-right: 0.5em;
+	display: block;
+}
+		
+#mFeedContainer #txtFields input {
+	font-size: 0.8em;
+	width: 450px; /* Change for portrait orientation */
+	margin-left: 1.5em;
+}
+
+#mFeedPlaceholder #mFeedContainer #buttons {
+	font-size: 0.7em;
+	margin-right: 10px;
+}
+
+
+
+
+/* --- FOOTER Elements --- */
+
+div#clear {
+	clear: both;
+}
+
+div#footer {
+	position: relative;
+	float: right;
+	padding: 35px 16px 35px 0;
+}
+
+#teigaLogo:hover {}
+#teigaLogo:active {
+	position: relative;
+	left: 2px;
+}
+
+div#footer span {
+	padding-right: 10px;
+	vertical-align: super;
+}
+
+div#hiddenImages {
+	display: none;
+}
+
+
+
+/* --- Template Elements---*/
+
+div#templates {
+	display: none;
+}
+
+
+
+/* FONT DEFINITIONS */
+@font-face {
+    font-family: 'ColaborateRegular';
+    src: url('fonts/ColabReg-webfont.eot');
+    src: url('fonts/ColabReg-webfont.eot?iefix') format('eot'),
+         url('fonts/ColabReg-webfont.woff') format('woff'),
+         url('fonts/ColabReg-webfont.ttf') format('truetype'),
+         url('fonts/ColabReg-webfont.svg#webfontB6AeCMH3') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+/* ---- ORIENTATION CHANGE CSS ---- */
+
+/* Max width 360px -- BlackBerry Torch */
+@media screen and (max-width: 360px) {
+	
+}
+
+/* Max width 600px -- BlackBerry Playbook Portrait */
+@media screen and (max-width: 600px) and (min-width: 361px) {	
+	ul#cellArea > li {
+    	margin: 0 0 16px 42px; 
+	}
+
+	ul#cellArea > li.selectedCell {
+		margin: -3px -3px 13px 39px;
+	}
+	
+	#contentArea {
+		width: 520px;
+		height: 884px;
+	}
+	
+	ul#feedList {
+		margin: 0 40px 15px 40px;
+	}
+	
+	#header #updateHelper {
+		top: 55px;
+		left: 60px;
+	}
+	
+	#header #sourcesHelper {
+		top: 0px;
+	}
+	
+	#contentOverlay {
+		width: 600px;
+		height: 1024px;
+	}
+	
+	div#readMoreSection iframe {
+		height: 970px;
+	}
+	
+	#loadingPlaceholder #loadingContainer {
+		top: 225px;
+		left: 125px;
+	}
+	
+	#mFeedContainer {
+		width: 540px;
+		left: 25px;
+	}
+	
+	#mFeedContainer #txtFields input {
+		width: 384px;
+	}
+	
+}
+
+/* Max width 1024px -- BlackBerry PlaybookLandscape */
+@media screen and (max-width: 1024px) and (min-width: 601px) {
+	ul#cellArea > li {
+    	margin: 0 0 16px 16px; 
+	}
+
+	ul#cellArea > li.selectedCell {
+		margin: -3px -3px 13px 13px;
+	}
+	
+	#contentArea {
+		width: 944px;
+		height: 460px;
+	}
+	
+	ul#feedList {
+		margin: 0 15px 15px 15px;
+	}
+
+}
+

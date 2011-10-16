@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:rim="http://www.blackberry.com/ns/widgets" version="1.4.0">
+	
+	<name>glimpse</name>
+	<description>A free uber news reader for the PlayBook tablet.</description>
+	<author rim:copyright="2011" email="glimpse@teiga.mx" href="http://glimpse.teiga.mx">Teiga</author>
+	<icon src="images/icon.png" />
+	<content src="index.html"/>
+
+	<feature id="blackberry.app" required="true" version="1.0.0.0"/>
+	<feature id="blackberry.app.event" version="1.0.0"/>
+	<access uri="*" subdomains="true"/>
+	<feature id="blackberry.invoke" version="1.0.0"/>
+	<feature id="blackberry.invoke.BrowserArguments" version="1.0.0"/>
+	<feature id="blackberry.ui.dialog" />
+	<rim:loadingScreen backgroundColor="#222222"
+			foregroundImage="images/splashForeground.png"
+			onFirstLaunch="true">
+	</rim:loadingScreen>
+
+</widget>

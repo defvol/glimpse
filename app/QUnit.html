@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head><title>glimpse - Regression Testing</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<!-- QUnit sources -->
+<link rel="stylesheet" href="http://code.jquery.com/qunit/git/qunit.css" type="text/css" media="screen" />
+<script type="text/javascript" src="http://code.jquery.com/qunit/git/qunit.js"></script>
+<!-- glimpse scripts -->
+<script type="text/javascript" src="js/bestImage.js"></script>
+<script type="text/javascript" src="js/feeds.js"></script>
+<script type="text/javascript" src="js/results.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	
+	QUnit.log = function(result, message) {
+		if (window.console && window.console.log) {
+			window.console.log(result +' :: '+ message);
+		}
+	}
+	
+	// Unit-test code
+		
+	module("bestImage.js");
+
+	/*
+	test('paparazzi(item, feedUrl, feedId)', 1, function() {
+		stop(1000);
+
+		setTimeout(function() {
+			equals(paparazzi(item, feedUrl, feedId), 0, "paparazzi(item, feedUrl, feedId)");
+			start();
+		}, 2000);
+	});
+	*/
+
+	test("indexOfMaxValue(intArray)", 9, function() {
+		var intArray;
+		intArray = [9, 1, 0, 0];
+		equals(indexOfMaxValue(intArray), 0, "indexOfMaxValue([9, 1, 0, 0])");
+		intArray = [4, 0, 0, 6];
+		equals(indexOfMaxValue(intArray), 3, "indexOfMaxValue([4, 0, 0, 6])");
+		intArray = [0, 8, 2, 0];
+		equals(indexOfMaxValue(intArray), 1, "indexOfMaxValue([0, 8, 2, 0])");
+		intArray = [10];
+		equals(indexOfMaxValue(intArray), 0, "indexOfMaxValue([10])");
+		intArray = [4, 'hello', 6];
+		equals(indexOfMaxValue(intArray), 0, "indexOfMaxValue([4, 'hello', 6]), will return IMAGE_METHOD_UNDEFINED");
+		intArray = [4, NaN, 6];
+		equals(indexOfMaxValue(intArray), 0, "indexOfMaxValue([4, NaN, 6]), will return IMAGE_METHOD_UNDEFINED");
+		intArray = [];
+		equals(indexOfMaxValue(intArray), IMAGE_METHOD_UNDEFINED, "indexOfMaxValue([]), will return IMAGE_METHOD_UNDEFINED");
+		intArray = 53;
+		equals(indexOfMaxValue(intArray), IMAGE_METHOD_UNDEFINED, "indexOfMaxValue(53), will return IMAGE_METHOD_UNDEFINED");
+		intArray = { "property":"value" };
+		equals(indexOfMaxValue(intArray), IMAGE_METHOD_UNDEFINED, "indexOfMaxValue(obj), will return IMAGE_METHOD_UNDEFINED");
+	});
+
+	test("isImageOk(img)", function() {
+		var img;
+		
+		img = $('<img />').attr({
+			src: 'http://www.google.com.mx/intl/en_com/images/srpr/logo1w.png',
+			width: 300,
+			height: 300
+		});	
+		equals(isImageOk(img), true, "isImageOk(img) - img[src=google, width=300, height=300]");
+		
+		img = $('<img />').attr({
+			src: 'http://www.google.com.mx/intl/en_com/images/srpr/logo1w.png',
+			width: 98,
+			height: 98
+		});	
+		equals(isImageOk(img), false, "isImageOk(img) - img[src=google, width=98, height=98]");
+		
+		img = $('<img />').attr({
+			src: 'http://www.google.com.mx/intl/en_com/images/srpr/logo1w.png',
+			width: 300,
+			height: 50
+		});	
+		equals(isImageOk(img), false, "isImageOk(img) - img[src=google, width=300, height=50]");
+
+		img = $('<img />').attr({
+			src: 'http://www.google.com.mx/intl/en_com/images/srpr/logo1w.png',
+			width: 150,
+			height: 5
+		});	
+		equals(isImageOk(img), false, "isImageOk(img) - img[src=google, width=150, height=5]");
+		
+		img = $('<img />').attr({
+			src: 'http://www.google.com.mx/intl/en_com/images/srpr/logo1w.png',
+			height: 300
+		});
+		equals(isImageOk(img), true, "isImageOk(img) - img[src=google, height=300]");
+		
+		img = $('<img />').attr({
+			src: 'http://www.google.com.mx/intl/en_com/images/srpr/logo1w.png',
+			width: 300
+		});	
+		equals(isImageOk(img), true, "isImageOk(img) - img[src=google, width=300]");
+
+		img = $('<img />').attr({
+			src: 'http://www.google.com.mx/intl/en_com/images/srpr/logo1w.png'
+		});	
+		equals(isImageOk(img), false, "isImageOk(img) - img[src=google]");
+		
+		img = $('<img />').attr({
+			width: 300,
+			height: 300
+		});	
+		equals(isImageOk(img), false, "isImageOk(img) - img[width=300, height=300]");
+
+		img = $('<img />');	
+		equals(isImageOk(img), false, "isImageOk(img) - img[...]");
+
+	});
+
+	module("feeds.js");
+
+	test("getHtmlForStory(story)", function() {
+		var story;
+		
+		equals(getHtmlForStory(story), false, "getHtmlForStory(story) - story[...]");		
+	});
+	// getHtmlForStory(story)
+	
+	
+});
+
+</script>  
+</head>
+
+<body>
+ <h1 id="qunit-header">QUnit - testing glimpse</h1>
+ <h2 id="qunit-banner"></h2>
+ <div id="qunit-testrunner-toolbar"></div>
+ <h2 id="qunit-userAgent"></h2>
+ <ol id="qunit-tests"></ol>
+ <div id="qunit-fixture">test markup, will be hidden</div>
+</body>
+</html>
