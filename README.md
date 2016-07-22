@@ -3,6 +3,10 @@ glimpse
 a news reader for the PlayBook tablet
 -
 
+![TechRepublic](https://raw.githubusercontent.com/rodowi/glimpse/master/screenshot.jpg)
+
+_Top 10 PlayBook apps after one week on the market - TechRepublic_
+
 History
 -
 This project started at [Teiga][] in the last days of February 2011 with the goal of participating in RIM's [Free Playbook Offer][].
